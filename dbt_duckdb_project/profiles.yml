@@ -1,0 +1,29 @@
+my_database_dbt:
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      threads: 1
+
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      threads: 4
+
+  target: dev
+
+dbt_duckdb_project:
+  outputs:
+    dev:
+      type: duckdb
+      path: dev.duckdb
+      schema: main
+      threads: 1
+
+    prod:
+      type: duckdb
+      path: prod.duckdb
+      schema: main
+      threads: 4
+
+  target: dev

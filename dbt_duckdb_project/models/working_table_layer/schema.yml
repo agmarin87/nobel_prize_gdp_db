@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: brz_slv_imf_countries
+    description: "unique list of countries from IMF and override from the SEEDS file"
+    columns:
+      - name: code
+      - name: name
+      - name: dbt_updated_at
+      - name: dbt_created_by

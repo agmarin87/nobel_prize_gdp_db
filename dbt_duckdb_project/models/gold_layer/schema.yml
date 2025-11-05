@@ -1,0 +1,26 @@
+
+version: 2
+
+models:
+  - name: gld_country_discrepancy_source
+    description: "list of countries in nobel laureates not in imf countries"
+    columns:
+      - name: country_name_discrepancy
+        description: "The name of the country that is in nobel laureates but not in imf countries"
+  - name: gld_country_discrepancy_after_correction
+    description: "list of countries in nobel laureates not in imf countries after manual correction"
+    columns:
+      - name: country_name_discrepancy
+        description: "The name of the country that is in nobel laureates but not in imf countries after manual correction"
+  - name: gld_laureate_gdp
+    description: "nobel laureates with country gdp data"
+    columns:
+      - name: laureate_current_country
+        description: "The current country of the laureate"
+      - name: laureate_current_country_code
+        description: "The country code of the laureate's current country"
+      - name: laureate_count
+        description: "The count of laureates per country per year"
+      - name: gdp_2025
+        description: "The GDP of the country in 2025"
+

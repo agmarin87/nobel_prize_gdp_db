@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: imf             # logical group name for IMF data
+    schema: main         # database schema where the data is located
+    tables:            # list of tables in the source
+      - name: sl_imf_countries
+      - name: sl_imf_indicators
+      - name: sl_imf_gdp
+  - name: nobel_prize     # logical group name for Nobel Prize data
+    schema: main         # database schema where the data is located
+    tables:            # list of tables in the source
+      - name: sl_nobel_laureates

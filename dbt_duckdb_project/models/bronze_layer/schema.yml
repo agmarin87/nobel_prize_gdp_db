@@ -1,0 +1,54 @@
+
+version: 2
+
+models:
+  - name: brz_imf_countries
+    description: "unique list of countries from IMF"
+    columns:
+      - name: code
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: name
+        description: "The name of the country"
+
+  - name: brz_imf_gdp
+    description: "raw gdp data from IMF"
+    columns:
+      - name: country_code
+        description: "The country code, foreign key to brz_imf_countries.code"
+        data_tests:
+          - not_null
+      - name: indicator
+        description: "The indicator code for the gdp data"
+        data_tests:
+          - not_null
+      - name: gdp_2025
+        description: "The projected gdp for 2025"
+
+  - name: brz_imf_indicators
+    description: "raw indicators data from IMF"
+    columns:
+      - name: code
+        description: "The primary key for this table"
+      - name: label
+        description: "The label for the indicator"
+      - name: description
+        description: "The description for the indicator"
+      - name: unit
+        description: "The unit for the indicator"
+  
+  - name: brz_nobel_laureates
+    description: "raw laureates data from Nobel Prize"
+    columns:
+      - name: laureate_id
+        description: "The unique identifier for the laureate"
+        data_tests:
+          - unique
+          - not_null
+      - name: laureate_full_name
+        description: "The full name of the laureate"
+      - name: laureate_current_country
+        description: "The current country of the laureate"
+

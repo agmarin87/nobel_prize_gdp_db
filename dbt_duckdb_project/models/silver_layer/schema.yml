@@ -1,0 +1,81 @@
+
+version: 2
+
+models:
+  - name: slv_imf_countries
+    description: "unique list of countries from IMF"
+    columns:
+      - name: imf_countries_key
+        description: "Surrogate primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: country_code
+        description: "The country code"
+      - name: country_name
+        description: "The name of the country"
+      - name: dbt_updated_at
+        description: "The timestamp when dbt last updated this record"
+      - name: dbt_created_by
+        description: "The user who created this record"   
+
+  - name: slv_imf_gdp
+    description: "gdp data from IMF"
+    columns:
+      - name: imf_gdp_key
+        description: "Surrogate primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: country_code
+        description: "The country code, foreign key to brz_imf_countries.code"
+      - name: indicator_code
+        description: "The indicator code for the gdp data"
+      - name: gdp_2025
+        description: "The projected gdp for 2025"
+      - name: dbt_updated_at
+        description: "The timestamp when dbt last updated this record"
+      - name: dbt_created_by
+        description: "The user who created this record"
+
+  - name: slv_imf_indicators
+    description: "indicators data from IMF"
+    columns:
+      - name: imf_indicators_key
+        description: "Surrogate primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: indicator_code
+        description: "The primary key for this table"
+      - name: indicator_label
+        description: "The label for the indicator"
+      - name: indicator_description
+        description: "The description for the indicator"
+      - name: indicator_unit
+        description: "The unit for the indicator"
+      - name: dbt_updated_at
+        description: "The timestamp when dbt last updated this record"
+      - name: dbt_created_by
+        description: "The user who created this record"
+  - name: slv_nobel_laureates
+    description: "nobel laureates data"
+    columns:
+      - name: nobel_laureates_key
+        description: "Surrogate primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+      - name: laureate_id
+        description: "id of the laureate from the source"
+      - name: laureate_full_name
+        description: "full name of the laureate"
+      - name: laureate_current_country
+        description: "current country of the laureate"
+      - name: dbt_updated_at
+        description: "The timestamp when dbt last updated this record"
+      - name: dbt_created_by
+        description: "The user who created this record"
+      - name: laureate_award_year
+        description: "The year the laureate was awarded the Nobel Prize"
+
