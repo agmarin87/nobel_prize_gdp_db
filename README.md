@@ -1,5 +1,8 @@
 Repository that contains a more advanced Data Engineering project.
 
+ARCHITECTURE
+![alt text](architecture_schematics.drawio.svg)
+
 DATA SOURCES <br />
 The project nobel_prize_gdp_db is a data warehouse performed with dbt-duckdb. It contains the REST_API data ingestion from different sources and transformations with DBT:
 1. source: International Monetary Fund (IMF) to obtain the GDP information per country (one record per country)
