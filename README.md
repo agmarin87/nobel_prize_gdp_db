@@ -14,12 +14,12 @@ Both data sources are joined by using the country column.
 The folder model contains several folders by following a medallion architecture (bronze, silver, gold):
 - Bronze: tables obtained from the REST_API data ingestion by using python scripts (located in dag_duckdb_scheduler.assets.py)
 
-- Silver: basic transformations (e.g. surrogate keys)
+- Silver: basic transformations (e.g. surrogate keys).
 
 - Gold: joined data. A python plot is performed by using the table gld_laureate_gdp.
 
 - Working layer: some countries do not have the same format in both data sources. Some countries are corrected here by taking the data from the folder SEEDS if such record exists. This gives the power to override/standarize the country codes with the country names.
-If necessary, discrepancies in the source can be seen in the view gld_country_discrepancy_source. On the other hand, discrepancies after corrections in theh Working Layer can be seen in the view gld_country_discrepancy_after_correction. 
+If necessary, discrepancies in the source can be seen in the view gld_country_discrepancy_source. On the other hand, discrepancies after corrections in the Working Layer can be seen in the view gld_country_discrepancy_after_correction. 
 
 ## ORCHESTRATION <br />
 The folder dag_duckdb_scheduler has been created thanks to dagster which is used as an scheduler. Library used is dagster-dbt.
